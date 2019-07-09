@@ -1,8 +1,7 @@
 <!DOCTYPE HTML>
-
 <html>
 	<head>
-		<title>Merryle's Bible Tools</title>
+		<title></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -18,7 +17,7 @@
 
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"></span><span class="title">Bible Tools</span>
+									<span class="symbol"><img src="images/cross.svg" alt="" /></span><span class="title">Bible Tools</span>
 								</a>
 
 							<!-- Nav -->
@@ -46,46 +45,18 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Merryle and Chibuzor Memorization</h1>
+							<h1>Generic Page</h1>
 							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<div id="verses">
-									<!--<form  name="myForm">
-										Week: <input type="number" name="fname">-->
-										<button onclick="validateForm(1)">Week 1</button>
-										<button onclick="validateForm(2)">Week 2</button>
-										<button onclick="validateForm(3)">Week 3</button>
-										<button onclick="validateForm(4)">Week 4</button>
-										<button onclick="validateForm(5)">Week 5</button>
-										<button onclick="validateForm(6)">Week 6</button>
-										<button onclick="validateForm(7)">Week 7</button>
-										<button onclick="validateForm(8)">Week 8</button>
-										<button onclick="validateForm(9)">Week 9</button>
-										<button onclick="validateForm(10)">Week 10</button>
-										<button onclick="validateForm(11)">Week 11</button>
-										<button onclick="validateForm(12)">Week 12</button>
-										<button onclick="validateForm(13)">Week 13</button>
-										<button onclick="validateForm(14)">Week 14</button>
-										<button onclick="validateForm(15)">Week 15</button>
-										<button onclick="validateForm(16)">Week 16</button>
-										<button onclick="validateForm(17)">Week 17</button>
-										<button onclick="validateForm(18)">Week 18</button>
-										<button onclick="validateForm(19)">Week 19</button>
-										<button onclick="validateForm(20)">Week 20</button>
-										<button onclick="validateForm(21)">Week 21</button>
-										<button onclick="validateForm(22)">Week 22</button>
-										<button onclick="validateForm(23)">Week 23</button>
-										<button onclick="validateForm(24)">Week 24</button>
-										<button onclick="validateForm(25)">Week 25</button>
-										<button onclick="validateForm(26)">Week 26</button>
-										<button onclick="validateForm(27)">Week 27</button>
-										<button onclick="validateForm(28)">Week 28</button>
-										<button onclick="validateForm(29)">Week 29</button>
-										<button onclick="validateForm(30)">Week 30</button>
-
-							</div>
+							<div class="wrap">
+   <div class="search">
+      <input id="searchkeys" type="text" class="searchTerm" placeholder="What are you looking for?">
+      <button type="submit" onclick="ret()" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
+</div><div id="verse"></div>
 						</div>
 					</div>
-
 
 				<!-- Footer -->
 					<footer id="footer">
@@ -137,58 +108,30 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-				function validateForm(x){
-					memoryVerses = ["2Corin5:17","Gal2:20","Romans12:1","John14:21",
-                "2Timothy3:16","Joshua1:8","John15:7","Phil4:6-7",
-                "1John1:3","Hebrews10:24-25","Matthew4:19","Romans1:16",
-               "Romans 3:23", "Isaiah53:6","Romans6:23","Hebrews 9:27",
-               "Romans5:8","1Peter3:18","Ephesians2:8-9","Titus3:5",
-               "John1:12","Revelation3:20", "1John5:13", "John5:24", "1Cor3:16"
-						 ,"1Cor2:12", "Isaiah41:10","Philippians4:13","Lamentations3:22-23",
-					 "Numbers 23:19", "Isaiah 26:3", "1Peter5:7", "Romans8:32", "Philippians4:19",
-				 "Hebrews2:18", "Psalms119:9,11", "Matthew6:33", "Luke9:23", "1John2:15-16", "Romans12:2",
-			 "1Corin15:58", "Hebrews12:3", "Mark10:45","2Cor4:5","Prov3:9-10","2Cor9:6-7",
-		 "Acts1:8","Matthew28:19-20","John123:34-35","1John3:18","Phil2:3-4","1Peter5:5-6",
-	 "Ephesians5:3","1Peter2:11","Leviticus19:11","Acts24:16","Hebrews11:6","Romans4:20-21",
- "Galatians6:9-10","Matthew 5:16"];
-			  var responses = [];
 
+			function ret() {
 
-				function getVerses(helper){
-					for (i = 0; i < x * 2; i++) {
+				var x = document.getElementById("searchkeys").value
 
 					var request = new XMLHttpRequest()
-					var url = "https://api.esv.org/v3/passage/text/?q=" + memoryVerses[i] + "&include-short-copyright=False&include-verse-numbers=False&include-footnotes=False";
+					var url = "https://api.esv.org/v3/passage/text/?q=" + x + "&include-short-copyright=False&include-verse-numbers=False";
 					request.open('GET',url,true)
 
 					request.setRequestHeader('Authorization', "Token 33569da094a3df8d83d074a80c0fbdf136c438a5")
 					request.send()
-					setTimeout(3000);
+					setTimeout(5000);
 					request.onload = function () {
 						var response = JSON.parse(this.response)['passages'][0]
 
-						helper(response)
-					}
-				}
-
-
-			}
-
-				getVerses(function post(x) {
-
 						var para = document.createElement("p");
-						var node = document.createTextNode(x);
+						var node = document.createTextNode(response);
 						para.appendChild(node);
-						document.getElementById("verses").appendChild(para);
+						document.getElementById("verse").appendChild(para);
 
-				});
-			}
-
+					}
 
 
-
-
-
+				}
 
 
 
@@ -196,6 +139,14 @@
 
 
 			</script>
+			<style>@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
+
+
+
+
+
+/*Resize the wrap to see the search bar change!*/
+</style>
 	</body>
 </html>
