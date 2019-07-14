@@ -44,44 +44,19 @@
 				</nav>
 
 				<!-- Main -->
+
 					<div id="main">
 						<div class="inner">
 							<h1>Merryle and Chibuzor Memorization</h1>
 							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<div id="verses">
-									<!--<form  name="myForm">
-										Week: <input type="number" name="fname">-->
-										<button onclick="validateForm(1)">Week 1</button>
-										<button onclick="validateForm(2)">Week 2</button>
-										<button onclick="validateForm(3)">Week 3</button>
-										<button onclick="validateForm(4)">Week 4</button>
-										<button onclick="validateForm(5)">Week 5</button>
-										<button onclick="validateForm(6)">Week 6</button>
-										<button onclick="validateForm(7)">Week 7</button>
-										<button onclick="validateForm(8)">Week 8</button>
-										<button onclick="validateForm(9)">Week 9</button>
-										<button onclick="validateForm(10)">Week 10</button>
-										<button onclick="validateForm(11)">Week 11</button>
-										<button onclick="validateForm(12)">Week 12</button>
-										<button onclick="validateForm(13)">Week 13</button>
-										<button onclick="validateForm(14)">Week 14</button>
-										<button onclick="validateForm(15)">Week 15</button>
-										<button onclick="validateForm(16)">Week 16</button>
-										<button onclick="validateForm(17)">Week 17</button>
-										<button onclick="validateForm(18)">Week 18</button>
-										<button onclick="validateForm(19)">Week 19</button>
-										<button onclick="validateForm(20)">Week 20</button>
-										<button onclick="validateForm(21)">Week 21</button>
-										<button onclick="validateForm(22)">Week 22</button>
-										<button onclick="validateForm(23)">Week 23</button>
-										<button onclick="validateForm(24)">Week 24</button>
-										<button onclick="validateForm(25)">Week 25</button>
-										<button onclick="validateForm(26)">Week 26</button>
-										<button onclick="validateForm(27)">Week 27</button>
-										<button onclick="validateForm(28)">Week 28</button>
-										<button onclick="validateForm(29)">Week 29</button>
-										<button onclick="validateForm(30)">Week 30</button>
+							<ul class="actions fit">
+								<li><a href="javascript:thisWeek()" class="button fit">This Week's verses</a></li>
+								<li><a href="javascript:upTilNow()" class="button fit">Verses up to now</a></li>
 
+
+
+							</ul>
+						<div id="verses">
 							</div>
 						</div>
 					</div>
@@ -137,52 +112,99 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-				function validateForm(x){
-					memoryVerses = ["2Corin5:17","Gal2:20","Romans12:1","John14:21",
-                "2Timothy3:16","Joshua1:8","John15:7","Phil4:6-7",
-                "1John1:3","Hebrews10:24-25","Matthew4:19","Romans1:16",
-               "Romans 3:23", "Isaiah53:6","Romans6:23","Hebrews 9:27",
-               "Romans5:8","1Peter3:18","Ephesians2:8-9","Titus3:5",
-               "John1:12","Revelation3:20", "1John5:13", "John5:24", "1Cor3:16"
-						 ,"1Cor2:12", "Isaiah41:10","Philippians4:13","Lamentations3:22-23",
-					 "Numbers 23:19", "Isaiah 26:3", "1Peter5:7", "Romans8:32", "Philippians4:19",
-				 "Hebrews2:18", "Psalms119:9,11", "Matthew6:33", "Luke9:23", "1John2:15-16", "Romans12:2",
-			 "1Corin15:58", "Hebrews12:3", "Mark10:45","2Cor4:5","Prov3:9-10","2Cor9:6-7",
-		 "Acts1:8","Matthew28:19-20","John123:34-35","1John3:18","Phil2:3-4","1Peter5:5-6",
-	 "Ephesians5:3","1Peter2:11","Leviticus19:11","Acts24:16","Hebrews11:6","Romans4:20-21",
- "Galatians6:9-10","Matthew 5:16"];
-			  var responses = [];
+
+					memoryVerses = ["2 Corinthians 5:17","Galatians 2:20","Romans 12:1","John 14:21","2 Timothy 3:16","Joshua 1:8","John 15:7","Philippians 4:6–7","1 John 1:3","Hebrews 10:24–25","Matthew 4:19","Romans 1:16","Romans 3:23","Isaiah 53:6","Romans 6:23","Hebrews 9:27","Romans 5:8","1 Peter 3:18","Ephesians 2:8–9","Titus 3:5","John 1:12","Revelation 3:20","1 John 5:13","John 5:24","1 Corinthians 3:16","1 Corinthians 2:12","Isaiah 41:10","Philippians 4:13","Lamentations 3:22–23","Numbers 23:19","Isaiah 26:3","1 Peter 5:7","Romans 8:32","Philippians 4:19","Hebrews 2:18","Psalm 119:9–11","Matthew 6:33","Luke 9:23","1 John 2:15–16","Romans 12:2","1 Corinthians 15:58","Hebrews 12:3","Mark 10:45","2 Corinthians 4:5","Proverbs 3:9–10","2 Corinthians 9:6–7","Acts 1:8","Matthew 28:19–20","John 13:34–35","1 John 3:18","Philippians 2:3–4","1 Peter 5:5–6","Ephesians 5:3","1 Peter 2:11","Leviticus 19:11","Acts 24:16","Hebrews 11:6","Romans 4:20–21","Galatians 6:9–10","Matthew 5:16"]
 
 
-				function getVerses(helper){
-					for (i = 0; i < x * 2; i++) {
+				verses = ["Therefore, if anyone is in Christ, he is a new creation. The old has passed away; behold, the new has come.","I have been crucified with Christ. It is no longer I who live, but Christ who lives in me. And the life I now live in the flesh I live by faith in the Son of God, who loved me and gave himself for me.","I appeal to you therefore, brothers, by the mercies of God, to present your bodies as a living sacrifice, holy and acceptable to God, which is your spiritual worship.","Whoever has my commandments and keeps them, he it is who loves me. And he who loves me will be loved by my Father, and I will love him and manifest myself to him.”","All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness,","This Book of the Law shall not depart from your mouth, but you shall meditate on it day and night, so that you may be careful to do according to all that is written in it. For then you will make your way prosperous, and then you will have good success.","If you abide in me, and my words abide in you, ask whatever you wish, and it will be done for you.","do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus.","that which we have seen and heard we proclaim also to you, so that you too may have fellowship with us; and indeed our fellowship is with the Father and with his Son Jesus Christ.","And let us consider how to stir up one another to love and good works, not neglecting to meet together, as is the habit of some, but encouraging one another, and all the more as you see the Day drawing near.","And he said to them, “Follow me, and I will make you fishers of men.”","For I am not ashamed of the gospel, for it is the power of God for salvation to everyone who believes, to the Jew first and also to the Greek.","for all have sinned and fall short of the glory of God,","All we like sheep have gone astray;","For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord.","And just as it is appointed for man to die once, and after that comes judgment,","but God shows his love for us in that while we were still sinners, Christ died for us.","For Christ also suffered once for sins, the righteous for the unrighteous, that he might bring us to God, being put to death in the flesh but made alive in the spirit,","For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast.","he saved us, not because of works done by us in righteousness, but according to his own mercy, by the washing of regeneration and renewal of the Holy Spirit,","But to all who did receive him, who believed in his name, he gave the right to become children of God,","Behold, I stand at the door and knock. If anyone hears my voice and opens the door, I will come in to him and eat with him, and he with me.","I write these things to you who believe in the name of the Son of God, that you may know that you have eternal life.","Truly, truly, I say to you, whoever hears my word and believes him who sent me has eternal life. He does not come into judgment, but has passed from death to life.","Do you not know that you are God's temple and that God's Spirit dwells in you?","Now we have received not the spirit of the world, but the Spirit who is from God, that we might understand the things freely given us by God.","fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand. ","I can do all things through him who strengthens me.","The steadfast love of the LORD never ceases;","God is not man, that he should lie,","You keep him in perfect peace","casting all your anxieties on him, because he cares for you.","He who did not spare his own Son but gave him up for us all, how will he not also with him graciously give us all things?","And my God will supply every need of yours according to his riches in glory in Christ Jesus.","For because he himself has suffered when tempted, he is able to help those who are being tempted.","How can a young man keep his way pure? By guarding it according to your word. With my whole heart I seek you; let me not wander from your commandments! I have stored up your word in my heart, that I might not sin against you. ","But seek first the kingdom of God and his righteousness, and all these things will be added to you.","And he said to all, “If anyone would come after me, let him deny himself and take up his cross daily and follow me.","Do not love the world or the things in the world. If anyone loves the world, the love of the Father is not in him. For all that is in the world—the desires of the flesh and the desires of the eyes and pride of life—is not from the Father but is from the world.","Do not be conformed to this world, but be transformed by the renewal of your mind, that by testing you may discern what is the will of God, what is good and acceptable and perfect.","Therefore, my beloved brothers, be steadfast, immovable, always abounding in the work of the Lord, knowing that in the Lord your labor is not in vain.","Consider him who endured from sinners such hostility against himself, so that you may not grow weary or fainthearted.","For even the Son of Man came not to be served but to serve, and to give his life as a ransom for many.”","For what we proclaim is not ourselves, but Jesus Christ as Lord, with ourselves as your servants for Jesus' sake.","Honor the LORD with your wealth","The point is this: whoever sows sparingly will also reap sparingly, and whoever sows bountifully will also reap bountifully. Each one must give as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver.","But you will receive power when the Holy Spirit has come upon you, and you will be my witnesses in Jerusalem and in all Judea and Samaria, and to the end of the earth.”","Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age.”","A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another. By this all people will know that you are my disciples, if you have love for one another.”","Little children, let us not love in word or talk but in deed and in truth.","Do nothing from selfish ambition or conceit, but in humility count others more significant than yourselves. Let each of you look not only to his own interests, but also to the interests of others.","Likewise, you who are younger, be subject to the elders. Clothe yourselves, all of you, with humility toward one another, for “God opposes the proud but gives grace to the humble.”","But sexual immorality and all impurity or covetousness must not even be named among you, as is proper among saints.","Beloved, I urge you as sojourners and exiles to abstain from the passions of the flesh, which wage war against your soul.","“You shall not steal; you shall not deal falsely; you shall not lie to one another.","So I always take pains to have a clear conscience toward both God and man.","And without faith it is impossible to please him, for whoever would draw near to God must believe that he exists and that he rewards those who seek him.","No unbelief made him waver concerning the promise of God, but he grew strong in his faith as he gave glory to God, fully convinced that God was able to do what he had promised.","And let us not grow weary of doing good, for in due season we will reap, if we do not give up. So then, as we have opportunity, let us do good to everyone, and especially to those who are of the household of faith.","In the same way, let your light shine before others, so that they may see your good works and give glory to your Father who is in heaven."]
 
-					var request = new XMLHttpRequest()
-					var url = "https://api.esv.org/v3/passage/text/?q=" + memoryVerses[i] + "&include-short-copyright=False&include-verse-numbers=False&include-footnotes=False";
-					request.open('GET',url,true)
+				sections = ["Christ the Center", "Obedience to Christ", "The Word",
+           "Prayer", "Fellowship", "Witnessing",
+           "All Have Sinned", "Sin's Penalty", "Christ Paid the Penalty",
+           "Salvation is not by Works", "Must Receive Christ",
+           "Assurance of Salvation", "His Spirit", "His Strength","His Faithfulness","His Peace",
+           "His Provision","His Help In Temptation","Put Christ First","Separate From the World",
+           "Be Steadfast", "Serve Others", "Give Generously", "Develop World Vision","Love","Humility",
+           "Purity","Honesty","Faith","Good Works"]
 
-					request.setRequestHeader('Authorization', "Token 33569da094a3df8d83d074a80c0fbdf136c438a5")
-					request.send()
-					setTimeout(3000);
-					request.onload = function () {
-						var response = JSON.parse(this.response)['passages'][0]
+chunks = ["Living the New Life", "Proclaiming Christ", "Reliance On God's Resources"
+          , "Being Christ's Disciple", "Growth in Christlikeness"]
 
-						helper(response)
+					function upTilNow(){
+
+						function getVerses(helper){
+							removeOldVerses()
+							var x = calculateWeek();
+							for(i = 0; i < x * 2; i++){
+								helper(memoryVerses[i],verses[i]);
+							}
+						}
+
+								getVerses(function post(ref,ver) {
+
+								var para = document.createElement("p");
+								var para2 = document.createElement("p");
+								var node = document.createTextNode(ref);
+								var node2 = document.createTextNode(ver);
+								para.appendChild(node);
+								para2.appendChild(node2);
+								document.getElementById("verses").appendChild(para);
+								document.getElementById("verses").appendChild(para2);
+
+						});
 					}
+
+					function thisWeek(){
+
+						function getVerses(helper){
+							removeOldVerses();
+							var x = calculateWeek();
+							addTitle(x);
+							for(i = (x - 1) * 2; i < x * 2; i++){
+								helper(memoryVerses[i],verses[i]);
+							}
+						}
+
+						function addTitle(x) {
+							var section = sections[x - 1];
+							var chunk = chunks[Math.floor(x / 6)];
+							var title = chunk + ": " + section;
+							var para = document.createElement("h3");
+							var node = document.createTextNode(title);
+							para.appendChild(node);
+							document.getElementById("verses").appendChild(para);
+						}
+
+								getVerses(function post(ref,ver) {
+
+								var para = document.createElement("p");
+								var para2 = document.createElement("p");
+								var node = document.createTextNode(ref);
+								var node2 = document.createTextNode(ver);
+								para.appendChild(node);
+								para2.appendChild(node2);
+								document.getElementById("verses").appendChild(para);
+								document.getElementById("verses").appendChild(para2);
+
+						});
+					}
+
+
+
+						function removeOldVerses(){
+							var node = document.getElementById("verses");
+							var children = node.children;
+							for (var i = 0; i < children.length; ) {
+								node.removeChild(children[i]);
+							}
+						}
+
+						function calculateWeek(){
+							var dat = new Date();
+							var start = new Date("2019-04-06 00:00:00.000000");
+							var diff = (dat-start) / 3600000 / 24 / 7;
+							return Math.floor(diff);
 				}
-
-
-			}
-
-				getVerses(function post(x) {
-
-						var para = document.createElement("p");
-						var node = document.createTextNode(x);
-						para.appendChild(node);
-						document.getElementById("verses").appendChild(para);
-
-				});
-			}
 
 
 
