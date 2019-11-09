@@ -130,6 +130,11 @@
 chunks = ["Living the New Life", "Proclaiming Christ", "Reliance On God's Resources"
           , "Being Christ's Disciple", "Growth in Christlikeness"]
 
+					memoryVerses.reverse()
+					verses.reverse()
+					sections.reverse()
+					chunks.reverse()
+
 					function upTilNow(){
 						function getVerses(helper){
 							removeOldVerses()
@@ -180,9 +185,9 @@ chunks = ["Living the New Life", "Proclaiming Christ", "Reliance On God's Resour
 
 						function calculateWeek(){
 							var dat = new Date();
-							var start = new Date("2019-04-06 00:00:00.000000");
+							var start = new Date("2019-11-09 00:00:00.000000");
 							var diff = (dat-start) / 3600000 / 24 / 7;
-							return Math.floor(diff);
+							return Math.ceil(diff);
 				}
 
 				function addTitle(x) {
