@@ -50,10 +50,20 @@
         <div class="inner">
             <h1>Personal Key Verses</h1>
             <!--<span class="image main"><img src="images/pic13.jpg" alt="" /></span>-->
+            <ul class="actions">
+                <li><a href="javascript:sophSpring()" class="button icon solid fa-smile-wink">Soph Spring</a></li>
+                <li><a href="javascript:juFall()" class="button icon solid fa-tint">      Junior Fall</a></li>
+                <li><a href="javascript:test()" class="button icon solid fa-pray disabled"> Junior Spring</a></li>
+
+
+
+            </ul>
             <div id="verses">
-                <div>Hebrews 12:1-2</div>
-                <div>Therefore, since we are surrounded by so great a cloud of witnesses, let us also lay aside every weight, and sin which clings so closely, and let us run with endurance the race that is set before us,
-                    looking to Jesus, the founder and perfecter of our faith, who for the joy that was set before him endured the cross, despising the shame, and is seated at the right hand of the throne of God.</div>
+                <strong>Hebrews 12:1-2</strong>
+                <br><br>
+                <blockquote>Therefore, since we are surrounded by so great a cloud of witnesses, let us also lay aside every weight, and sin which clings so closely, and let us run with endurance the race that is set before us,
+                    looking to Jesus, the founder and perfecter of our faith, who for the joy that was set before him endured the cross, despising the shame,
+                and is seated at the right hand of the throne of God.</blockquote>
             </div>
         </div>
     </div>
@@ -106,6 +116,586 @@
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+
+    memoryVersesSS = ["Psalm 1", "Psalm 23", "Psalm 42", "Psalm 73",
+                        "Isaiah 40:31", "2 Timothy 2:3", "Matthew 5:3-10", "Habakkuk 3:17-19"];
+    versesSS = ["Blessed is the man\n" +
+    "    who walks not in the counsel of the wicked,\n" +
+    "nor stands in the way of sinners,\n" +
+    "    nor sits in the seat of scoffers;\n" +
+    "but his delight is in the law of the Lord,\n" +
+    "    and on his law he meditates day and night.\n" +
+    "He is like a tree\n" +
+    "    planted by streams of water\n" +
+    "that yields its fruit in its season,\n" +
+    "    and its leaf does not wither.\n" +
+    "In all that he does, he prospers.\n" +
+    "The wicked are not so,\n" +
+    "    but are like chaff that the wind drives away.\n" +
+    "Therefore the wicked will not stand in the judgment,\n" +
+    "    nor sinners in the congregation of the righteous;\n" +
+    "for the Lord knows the way of the righteous,\n" +
+    "    but the way of the wicked will perish.",
+
+    "The Lord is my shepherd; I shall not want.\n" +
+    "    He makes me lie down in green pastures.\n" +
+    "He leads me beside still waters.\n" +
+    "    He restores my soul.\n" +
+    "He leads me in paths of righteousness\n" +
+    "    for his name's sake.\n" +
+    "Even though I walk through the valley of the shadow of death,\n" +
+    "    I will fear no evil,\n" +
+    "for you are with me;\n" +
+    "    your rod and your staff,\n" +
+    "    they comfort me.\n" +
+    "You prepare a table before me\n" +
+    "    in the presence of my enemies;\n" +
+    "you anoint my head with oil;\n" +
+    "    my cup overflows.\n" +
+    "Surely goodness and mercy shall follow me\n" +
+    "    all the days of my life,\n" +
+    "and I shall dwell in the house of the Lord\n" +
+    "    forever.",
+
+    "As a deer pants for flowing streams,\n" +
+    "    so pants my soul for you, O God.\n" +
+    "My soul thirsts for God,\n" +
+    "    for the living God.\n" +
+    "When shall I come and appear before God?\n" +
+    "My tears have been my food\n" +
+    "    day and night,\n" +
+    "while they say to me all the day long,\n" +
+    "    “Where is your God?”\n" +
+    "These things I remember,\n" +
+    "    as I pour out my soul:\n" +
+    "how I would go with the throng\n" +
+    "    and lead them in procession to the house of God\n" +
+    "with glad shouts and songs of praise,\n" +
+    "    a multitude keeping festival.\n" +
+    "Why are you cast down, O my soul,\n" +
+    "    and why are you in turmoil within me?\n" +
+    "Hope in God; for I shall again praise him,\n" +
+    "    my salvation and my God.\n" +
+    "My soul is cast down within me;\n" +
+    "    therefore I remember you\n" +
+    "from the land of Jordan and of Hermon,\n" +
+    "    from Mount Mizar.\n" +
+    "Deep calls to deep\n" +
+    "    at the roar of your waterfalls;\n" +
+    "all your breakers and your waves\n" +
+    "    have gone over me.\n" +
+    "By day the Lord commands his steadfast love,\n" +
+    "    and at night his song is with me,\n" +
+    "    a prayer to the God of my life.\n" +
+    "I say to God, my rock:\n" +
+    "    “Why have you forgotten me?\n" +
+    "Why do I go mourning\n" +
+    "    because of the oppression of the enemy?”\n" +
+    "As with a deadly wound in my bones,\n" +
+    "    my adversaries taunt me,\n" +
+    "while they say to me all the day long,\n" +
+    "    “Where is your God?”\n" +
+    "Why are you cast down, O my soul,\n" +
+    "    and why are you in turmoil within me?\n" +
+    "Hope in God; for I shall again praise him,\n" +
+    "    my salvation and my God.",
+
+    "Truly God is good to Israel,\n" +
+    "    to those who are pure in heart.\n" +
+    "But as for me, my feet had almost stumbled,\n" +
+    "    my steps had nearly slipped.\n" +
+    "For I was envious of the arrogant\n" +
+    "    when I saw the prosperity of the wicked.\n" +
+    "For they have no pangs until death;\n" +
+    "    their bodies are fat and sleek.\n" +
+    "They are not in trouble as others are;\n" +
+    "    they are not stricken like the rest of mankind.\n" +
+    "Therefore pride is their necklace;\n" +
+    "    violence covers them as a garment.\n" +
+    "Their eyes swell out through fatness;\n" +
+    "    their hearts overflow with follies.\n" +
+    "They scoff and speak with malice;\n" +
+    "    loftily they threaten oppression.\n" +
+    "They set their mouths against the heavens,\n" +
+    "    and their tongue struts through the earth.\n" +
+    "Therefore his people turn back to them,\n" +
+    "    and find no fault in them.\n" +
+    "And they say, “How can God know?\n" +
+    "    Is there knowledge in the Most High?”\n" +
+    "Behold, these are the wicked;\n" +
+    "    always at ease, they increase in riches.\n" +
+    "All in vain have I kept my heart clean\n" +
+    "    and washed my hands in innocence.\n" +
+    "For all the day long I have been stricken\n" +
+    "    and rebuked every morning.\n" +
+    "If I had said, “I will speak thus,”\n" +
+    "    I would have betrayed the generation of your children.\n" +
+    "But when I thought how to understand this,\n" +
+    "    it seemed to me a wearisome task,\n" +
+    "until I went into the sanctuary of God;\n" +
+    "    then I discerned their end.\n" +
+    "Truly you set them in slippery places;\n" +
+    "    you make them fall to ruin.\n" +
+    "How they are destroyed in a moment,\n" +
+    "    swept away utterly by terrors!\n" +
+    "Like a dream when one awakes,\n" +
+    "    O Lord, when you rouse yourself, you despise them as phantoms.\n" +
+    "When my soul was embittered,\n" +
+    "    when I was pricked in heart,\n" +
+    "I was brutish and ignorant;\n" +
+    "    I was like a beast toward you.\n" +
+    "Nevertheless, I am continually with you;\n" +
+    "    you hold my right hand.\n" +
+    "You guide me with your counsel,\n" +
+    "    and afterward you will receive me to glory.\n" +
+    "Whom have I in heaven but you?\n" +
+    "    And there is nothing on earth that I desire besides you.\n" +
+    "My flesh and my heart may fail,\n" +
+    "    but God is the strength of my heart and my portion forever.\n" +
+    "For behold, those who are far from you shall perish;\n" +
+    "    you put an end to everyone who is unfaithful to you.\n" +
+    "But for me it is good to be near God;\n" +
+    "    I have made the Lord God my refuge,\n" +
+    "    that I may tell of all your works.",
+
+    "but they who wait for the Lord shall renew their strength;\n" +
+    "    they shall mount up with wings like eagles;\n" +
+    "they shall run and not be weary;\n" +
+    "    they shall walk and not faint.",
+
+    "Share in suffering as a good soldier of Christ Jesus.",
+
+    "“Blessed are the poor in spirit, for theirs is the kingdom of heaven.\n" +
+    "“Blessed are those who mourn, for they shall be comforted.\n" +
+    "“Blessed are the meek, for they shall inherit the earth.\n" +
+    "“Blessed are those who hunger and thirst for righteousness, for they shall be satisfied.\n" +
+    "“Blessed are the merciful, for they shall receive mercy.\n" +
+    "“Blessed are the pure in heart, for they shall sePsale God.\n" +
+    "“Blessed are the peacemakers, for they shall be called sons of God.\n" +
+    "“Blessed are those who are persecuted for righteousness' sake, for theirs is the kingdom of heaven.",
+
+    "Though the fig tree should not blossom,\n" +
+    "    nor fruit be on the vines,\n" +
+    "the produce of the olive fail\n" +
+    "    and the fields yield no food,\n" +
+    "the flock be cut off from the fold\n" +
+    "    and there be no herd in the stalls,\n" +
+    "yet I will rejoice in the Lord;\n" +
+    "    I will take joy in the God of my salvation.\n" +
+    "God, the Lord, is my strength;\n" +
+    "    he makes my feet like the deer's;\n" +
+    "    he makes me tread on my high places."];
+
+    memoryVersesJF = ["Psalm 8", "Psalm 16", "Psalm 34", "Psalm 139",
+                    "Gensis 32:22-32", "Isaiah 9:6", "Isaiah 40", "John 15:13",
+                    "Romans 8", "Hebrews 11"];
+    versesJF = ["O Lord, our Lord,\n" +
+    "    how majestic is your name in all the earth!\n" +
+    "You have set your glory above the heavens.\n" +
+    "    Out of the mouth of babies and infants,\n" +
+    "you have established strength because of your foes,\n" +
+    "    to still the enemy and the avenger.\n" +
+    "When I look at your heavens, the work of your fingers,\n" +
+    "    the moon and the stars, which you have set in place,\n" +
+    "what is man that you are mindful of him,\n" +
+    "    and the son of man that you care for him?\n" +
+    "Yet you have made him a little lower than the heavenly beings\n" +
+    "    and crowned him with glory and honor.\n" +
+    "You have given him dominion over the works of your hands;\n" +
+    "    you have put all things under his feet,\n" +
+    "all sheep and oxen,\n" +
+    "    and also the beasts of the field,\n" +
+    "the birds of the heavens, and the fish of the sea,\n" +
+    "    whatever passes along the paths of the seas.\n" +
+    "O Lord, our Lord,\n" +
+    "    how majestic is your name in all the earth!",
+
+    "Preserve me, O God, for in you I take refuge.\n" +
+    "I say to the Lord, “You are my Lord;\n" +
+    "    I have no good apart from you.”\n" +
+    "As for the saints in the land, they are the excellent ones,\n" +
+    "    in whom is all my delight.\n" +
+    "The sorrows of those who run after another god shall multiply;\n" +
+    "    their drink offerings of blood I will not pour out\n" +
+    "    or take their names on my lips.\n" +
+    "The Lord is my chosen portion and my cup;\n" +
+    "    you hold my lot.\n" +
+    "The lines have fallen for me in pleasant places;\n" +
+    "    indeed, I have a beautiful inheritance.\n" +
+    "I bless the Lord who gives me counsel;\n" +
+    "    in the night also my heart instructs me.\n" +
+    "I have set the Lord always before me;\n" +
+    "    because he is at my right hand, I shall not be shaken.\n" +
+    "Therefore my heart is glad, and my whole being rejoices;\n" +
+    "    my flesh also dwells secure.\n" +
+    "For you will not abandon my soul to Sheol,\n" +
+    "    or let your holy one see corruption.\n" +
+    "You make known to me the path of life;\n" +
+    "    in your presence there is fullness of joy;\n" +
+    "    at your right hand are pleasures forevermore.",
+
+    "I will bless the Lord at all times;\n" +
+    "    his praise shall continually be in my mouth.\n" +
+    "My soul makes its boast in the Lord;\n" +
+    "    let the humble hear and be glad.\n" +
+    "Oh, magnify the Lord with me,\n" +
+    "    and let us exalt his name together!\n" +
+    "I sought the Lord, and he answered me\n" +
+    "    and delivered me from all my fears.\n" +
+    "Those who look to him are radiant,\n" +
+    "    and their faces shall never be ashamed.\n" +
+    "This poor man cried, and the Lord heard him\n" +
+    "    and saved him out of all his troubles.\n" +
+    "The angel of the Lord encamps\n" +
+    "    around those who fear him, and delivers them.\n" +
+    "Oh, taste and see that the Lord is good!\n" +
+    "    Blessed is the man who takes refuge in him!\n" +
+    "Oh, fear the Lord, you his saints,\n" +
+    "    for those who fear him have no lack!\n" +
+    "The young lions suffer want and hunger;\n" +
+    "    but those who seek the Lord lack no good thing.\n" +
+    "Come, O children, listen to me;\n" +
+    "    I will teach you the fear of the Lord.\n" +
+    "What man is there who desires life\n" +
+    "    and loves many days, that he may see good?\n" +
+    "Keep your tongue from evil\n" +
+    "    and your lips from speaking deceit.\n" +
+    "Turn away from evil and do good;\n" +
+    "    seek peace and pursue it.\n" +
+    "The eyes of the Lord are toward the righteous\n" +
+    "    and his ears toward their cry.\n" +
+    "The face of the Lord is against those who do evil,\n" +
+    "    to cut off the memory of them from the earth.\n" +
+    "When the righteous cry for help, the Lord hears\n" +
+    "    and delivers them out of all their troubles.\n" +
+    "The Lord is near to the brokenhearted\n" +
+    "    and saves the crushed in spirit.\n" +
+    "Many are the afflictions of the righteous,\n" +
+    "    but the Lord delivers him out of them all.\n" +
+    "He keeps all his bones;\n" +
+    "    not one of them is broken.\n" +
+    "Affliction will slay the wicked,\n" +
+    "    and those who hate the righteous will be condemned.\n" +
+    "The Lord redeems the life of his servants;\n" +
+    "    none of those who take refuge in him will be condemned.",
+
+    "O Lord, you have searched me and known me!\n" +
+    "You know when I sit down and when I rise up;\n" +
+    "    you discern my thoughts from afar.\n" +
+    "You search out my path and my lying down\n" +
+    "    and are acquainted with all my ways.\n" +
+    "Even before a word is on my tongue,\n" +
+    "    behold, O Lord, you know it altogether.\n" +
+    "You hem me in, behind and before,\n" +
+    "    and lay your hand upon me.\n" +
+    "Such knowledge is too wonderful for me;\n" +
+    "    it is high; I cannot attain it.\n" +
+    "Where shall I go from your Spirit?\n" +
+    "    Or where shall I flee from your presence?\n" +
+    "If I ascend to heaven, you are there!\n" +
+    "    If I make my bed in Sheol, you are there!\n" +
+    "If I take the wings of the morning\n" +
+    "    and dwell in the uttermost parts of the sea,\n" +
+    "even there your hand shall lead me,\n" +
+    "    and your right hand shall hold me.\n" +
+    "If I say, “Surely the darkness shall cover me,\n" +
+    "    and the light about me be night,”\n" +
+    "even the darkness is not dark to you;\n" +
+    "    the night is bright as the day,\n" +
+    "    for darkness is as light with you.\n" +
+    "For you formed my inward parts;\n" +
+    "    you knitted me together in my mother's womb.\n" +
+    "I praise you, for I am fearfully and wonderfully made.\n" +
+    "Wonderful are your works;\n" +
+    "    my soul knows it very well.\n" +
+    "My frame was not hidden from you,\n" +
+    "when I was being made in secret,\n" +
+    "    intricately woven in the depths of the earth.\n" +
+    "Your eyes saw my unformed substance;\n" +
+    "in your book were written, every one of them,\n" +
+    "    the days that were formed for me,\n" +
+    "    when as yet there was none of them.\n" +
+    "How precious to me are your thoughts, O God!\n" +
+    "    How vast is the sum of them!\n" +
+    "If I would count them, they are more than the sand.\n" +
+    "    I awake, and I am still with you.\n" +
+    "Oh that you would slay the wicked, O God!\n" +
+    "    O men of blood, depart from me!\n" +
+    "They speak against you with malicious intent;\n" +
+    "    your enemies take your name in vain.\n" +
+    "Do I not hate those who hate you, O Lord?\n" +
+    "    And do I not loathe those who rise up against you?\n" +
+    "I hate them with complete hatred;\n" +
+    "    I count them my enemies.\n" +
+    "Search me, O God, and know my heart!\n" +
+    "    Try me and know my thoughts!\n" +
+    "And see if there be any grievous way in me,\n" +
+    "    and lead me in the way everlasting!",
+
+    "The same night he arose and took his two wives, his two female servants, and his eleven children, and crossed the ford of the Jabbok. He took them and sent them across the stream, and everything else that he had. And Jacob was left alone. And a man wrestled with him until the breaking of the day. When the man saw that he did not prevail against Jacob, he touched his hip socket, and Jacob's hip was put out of joint as he wrestled with him. Then he said, “Let me go, for the day has broken.” But Jacob said, “I will not let you go unless you bless me.” And he said to him, “What is your name?” And he said, “Jacob.” Then he said, “Your name shall no longer be called Jacob, but Israel, for you have striven with God and with men, and have prevailed.” Then Jacob asked him, “Please tell me your name.” But he said, “Why is it that you ask my name?” And there he blessed him. So Jacob called the name of the place Peniel, saying, “For I have seen God face to face, and yet my life has been delivered.” The sun rose upon him as he passed Penuel, limping because of his hip. Therefore to this day the people of Israel do not eat the sinew of the thigh that is on the hip socket, because he touched the socket of Jacob's hip on the sinew of the thigh.",
+
+    "For to us a child is born,\n" +
+    "    to us a son is given;\n" +
+    "and the government shall be upon his shoulder,\n" +
+    "    and his name shall be called\n" +
+    "Wonderful Counselor, Mighty God,\n" +
+    "    Everlasting Father, Prince of Peace.",
+
+    "Comfort, comfort my people, says your God.\n" +
+    "Speak tenderly to Jerusalem,\n" +
+    "    and cry to her\n" +
+    "that her warfare is ended,\n" +
+    "    that her iniquity is pardoned,\n" +
+    "that she has received from the Lord's hand\n" +
+    "    double for all her sins.\n" +
+    "A voice cries:\n" +
+    "“In the wilderness prepare the way of the Lord;\n" +
+    "    make straight in the desert a highway for our God.\n" +
+    "Every valley shall be lifted up,\n" +
+    "    and every mountain and hill be made low;\n" +
+    "the uneven ground shall become level,\n" +
+    "    and the rough places a plain.\n" +
+    "And the glory of the Lord shall be revealed,\n" +
+    "    and all flesh shall see it together,\n" +
+    "    for the mouth of the Lord has spoken.”\n" +
+    "A voice says, “Cry!”\n" +
+    "    And I said, “What shall I cry?”\n" +
+    "All flesh is grass,\n" +
+    "    and all its beauty is like the flower of the field.\n" +
+    "The grass withers, the flower fades\n" +
+    "    when the breath of the Lord blows on it;\n" +
+    "    surely the people are grass.\n" +
+    "The grass withers, the flower fades,\n" +
+    "    but the word of our God will stand forever.\n" +
+    "Go on up to a high mountain,\n" +
+    "    O Zion, herald of good news;\n" +
+    "lift up your voice with strength,\n" +
+    "    O Jerusalem, herald of good news;\n" +
+    "    lift it up, fear not;\n" +
+    "say to the cities of Judah,\n" +
+    "    “Behold your God!”\n" +
+    "Behold, the Lord God comes with might,\n" +
+    "    and his arm rules for him;\n" +
+    "behold, his reward is with him,\n" +
+    "    and his recompense before him.\n" +
+    "He will tend his flock like a shepherd;\n" +
+    "    he will gather the lambs in his arms;\n" +
+    "he will carry them in his bosom,\n" +
+    "    and gently lead those that are with young.\n" +
+    "Who has measured the waters in the hollow of his hand\n" +
+    "    and marked off the heavens with a span,\n" +
+    "enclosed the dust of the earth in a measure\n" +
+    "    and weighed the mountains in scales\n" +
+    "    and the hills in a balance?\n" +
+    "Who has measured the Spirit of the Lord,\n" +
+    "    or what man shows him his counsel?\n" +
+    "Whom did he consult,\n" +
+    "    and who made him understand?\n" +
+    "Who taught him the path of justice,\n" +
+    "    and taught him knowledge,\n" +
+    "    and showed him the way of understanding?\n" +
+    "Behold, the nations are like a drop from a bucket,\n" +
+    "    and are accounted as the dust on the scales;\n" +
+    "    behold, he takes up the coastlands like fine dust.\n" +
+    "Lebanon would not suffice for fuel,\n" +
+    "    nor are its beasts enough for a burnt offering.\n" +
+    "All the nations are as nothing before him,\n" +
+    "    they are accounted by him as less than nothing and emptiness.\n" +
+    "To whom then will you liken God,\n" +
+    "    or what likeness compare with him?\n" +
+    "An idol! A craftsman casts it,\n" +
+    "    and a goldsmith overlays it with gold\n" +
+    "    and casts for it silver chains.\n" +
+    "He who is too impoverished for an offering\n" +
+    "    chooses wood that will not rot;\n" +
+    "he seeks out a skillful craftsman\n" +
+    "    to set up an idol that will not move.\n" +
+    "Do you not know? Do you not hear?\n" +
+    "    Has it not been told you from the beginning?\n" +
+    "    Have you not understood from the foundations of the earth?\n" +
+    "It is he who sits above the circle of the earth,\n" +
+    "    and its inhabitants are like grasshoppers;\n" +
+    "who stretches out the heavens like a curtain,\n" +
+    "    and spreads them like a tent to dwell in;\n" +
+    "who brings princes to nothing,\n" +
+    "    and makes the rulers of the earth as emptiness.\n" +
+    "Scarcely are they planted, scarcely sown,\n" +
+    "    scarcely has their stem taken root in the earth,\n" +
+    "when he blows on them, and they wither,\n" +
+    "    and the tempest carries them off like stubble.\n" +
+    "To whom then will you compare me,\n" +
+    "    that I should be like him? says the Holy One.\n" +
+    "Lift up your eyes on high and see:\n" +
+    "    who created these?\n" +
+    "He who brings out their host by number,\n" +
+    "    calling them all by name;\n" +
+    "by the greatness of his might\n" +
+    "    and because he is strong in power,\n" +
+    "    not one is missing.\n" +
+    "Why do you say, O Jacob,\n" +
+    "    and speak, O Israel,\n" +
+    "“My way is hidden from the Lord,\n" +
+    "    and my right is disregarded by my God”?\n" +
+    "Have you not known? Have you not heard?\n" +
+    "The Lord is the everlasting God,\n" +
+    "    the Creator of the ends of the earth.\n" +
+    "He does not faint or grow weary;\n" +
+    "    his understanding is unsearchable.\n" +
+    "He gives power to the faint,\n" +
+    "    and to him who has no might he increases strength.\n" +
+    "Even youths shall faint and be weary,\n" +
+    "    and young men shall fall exhausted;\n" +
+    "but they who wait for the Lord shall renew their strength;\n" +
+    "    they shall mount up with wings like eagles;\n" +
+    "they shall run and not be weary;\n" +
+    "    they shall walk and not faint.",
+
+    "Greater love has no one than this, that someone lay down his life for his friends.",
+
+    "Life in the Spirit\n" +
+    "There is therefore now no condemnation for those who are in Christ Jesus. For the law of the Spirit of life has set you free in Christ Jesus from the law of sin and death. For God has done what the law, weakened by the flesh, could not do. By sending his own Son in the likeness of sinful flesh and for sin, he condemned sin in the flesh, in order that the righteous requirement of the law might be fulfilled in us, who walk not according to the flesh but according to the Spirit. For those who live according to the flesh set their minds on the things of the flesh, but those who live according to the Spirit set their minds on the things of the Spirit. For to set the mind on the flesh is death, but to set the mind on the Spirit is life and peace. For the mind that is set on the flesh is hostile to God, for it does not submit to God's law; indeed, it cannot. Those who are in the flesh cannot please God.\n" +
+    "You, however, are not in the flesh but in the Spirit, if in fact the Spirit of God dwells in you. Anyone who does not have the Spirit of Christ does not belong to him. But if Christ is in you, although the body is dead because of sin, the Spirit is life because of righteousness. If the Spirit of him who raised Jesus from the dead dwells in you, he who raised Christ Jesus from the dead will also give life to your mortal bodies through his Spirit who dwells in you.\n" +
+    "Heirs with Christ\n" +
+    "So then, brothers, we are debtors, not to the flesh, to live according to the flesh. For if you live according to the flesh you will die, but if by the Spirit you put to death the deeds of the body, you will live. For all who are led by the Spirit of God are sons of God. For you did not receive the spirit of slavery to fall back into fear, but you have received the Spirit of adoption as sons, by whom we cry, “Abba! Father!” The Spirit himself bears witness with our spirit that we are children of God, and if children, then heirs—heirs of God and fellow heirs with Christ, provided we suffer with him in order that we may also be glorified with him.\n" +
+    "Future Glory\n" +
+    "For I consider that the sufferings of this present time are not worth comparing with the glory that is to be revealed to us. For the creation waits with eager longing for the revealing of the sons of God. For the creation was subjected to futility, not willingly, but because of him who subjected it, in hope that the creation itself will be set free from its bondage to corruption and obtain the freedom of the glory of the children of God. For we know that the whole creation has been groaning together in the pains of childbirth until now. And not only the creation, but we ourselves, who have the firstfruits of the Spirit, groan inwardly as we wait eagerly for adoption as sons, the redemption of our bodies. For in this hope we were saved. Now hope that is seen is not hope. For who hopes for what he sees? But if we hope for what we do not see, we wait for it with patience.\n" +
+    "Likewise the Spirit helps us in our weakness. For we do not know what to pray for as we ought, but the Spirit himself intercedes for us with groanings too deep for words. And he who searches hearts knows what is the mind of the Spirit, because the Spirit intercedes for the saints according to the will of God. And we know that for those who love God all things work together for good, for those who are called according to his purpose. For those whom he foreknew he also predestined to be conformed to the image of his Son, in order that he might be the firstborn among many brothers. And those whom he predestined he also called, and those whom he called he also justified, and those whom he justified he also glorified.\n" +
+    "God's Everlasting Love\n" +
+    "What then shall we say to these things? If God is for us, who can be against us? He who did not spare his own Son but gave him up for us all, how will he not also with him graciously give us all things? Who shall bring any charge against God's elect? It is God who justifies. Who is to condemn? Christ Jesus is the one who died—more than that, who was raised—who is at the right hand of God, who indeed is interceding for us. Who shall separate us from the love of Christ? Shall tribulation, or distress, or persecution, or famine, or nakedness, or danger, or sword? As it is written,\n" +
+    "“For your sake we are being killed all the day long;\n" +
+    "    we are regarded as sheep to be slaughtered.”\n" +
+    "No, in all these things we are more than conquerors through him who loved us. For I am sure that neither death nor life, nor angels nor rulers, nor things present nor things to come, nor powers, nor height nor depth, nor anything else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord.",
+
+    "Now faith is the assurance of things hoped for, the conviction of things not seen. For by it the people of old received their commendation. By faith we understand that the universe was created by the word of God, so that what is seen was not made out of things that are visible.\n" +
+    "By faith Abel offered to God a more acceptable sacrifice than Cain, through which he was commended as righteous, God commending him by accepting his gifts. And through his faith, though he died, he still speaks. By faith Enoch was taken up so that he should not see death, and he was not found, because God had taken him. Now before he was taken he was commended as having pleased God. And without faith it is impossible to please him, for whoever would draw near to God must believe that he exists and that he rewards those who seek him. By faith Noah, being warned by God concerning events as yet unseen, in reverent fear constructed an ark for the saving of his household. By this he condemned the world and became an heir of the righteousness that comes by faith.\n" +
+    "By faith Abraham obeyed when he was called to go out to a place that he was to receive as an inheritance. And he went out, not knowing where he was going. By faith he went to live in the land of promise, as in a foreign land, living in tents with Isaac and Jacob, heirs with him of the same promise. For he was looking forward to the city that has foundations, whose designer and builder is God. By faith Sarah herself received power to conceive, even when she was past the age, since she considered him faithful who had promised. Therefore from one man, and him as good as dead, were born descendants as many as the stars of heaven and as many as the innumerable grains of sand by the seashore.\n" +
+    "These all died in faith, not having received the things promised, but having seen them and greeted them from afar, and having acknowledged that they were strangers and exiles on the earth. For people who speak thus make it clear that they are seeking a homeland. If they had been thinking of that land from which they had gone out, they would have had opportunity to return. But as it is, they desire a better country, that is, a heavenly one. Therefore God is not ashamed to be called their God, for he has prepared for them a city.\n" +
+    "By faith Abraham, when he was tested, offered up Isaac, and he who had received the promises was in the act of offering up his only son, of whom it was said, “Through Isaac shall your offspring be named.” He considered that God was able even to raise him from the dead, from which, figuratively speaking, he did receive him back. By faith Isaac invoked future blessings on Jacob and Esau. By faith Jacob, when dying, blessed each of the sons of Joseph, bowing in worship over the head of his staff. By faith Joseph, at the end of his life, made mention of the exodus of the Israelites and gave directions concerning his bones.\n" +
+    "By faith Moses, when he was born, was hidden for three months by his parents, because they saw that the child was beautiful, and they were not afraid of the king's edict. By faith Moses, when he was grown up, refused to be called the son of Pharaoh's daughter, choosing rather to be mistreated with the people of God than to enjoy the fleeting pleasures of sin. He considered the reproach of Christ greater wealth than the treasures of Egypt, for he was looking to the reward. By faith he left Egypt, not being afraid of the anger of the king, for he endured as seeing him who is invisible. By faith he kept the Passover and sprinkled the blood, so that the Destroyer of the firstborn might not touch them.\n" +
+    "By faith the people crossed the Red Sea as on dry land, but the Egyptians, when they attempted to do the same, were drowned. By faith the walls of Jericho fell down after they had been encircled for seven days. By faith Rahab the prostitute did not perish with those who were disobedient, because she had given a friendly welcome to the spies.\n" +
+    "And what more shall I say? For time would fail me to tell of Gideon, Barak, Samson, Jephthah, of David and Samuel and the prophets— who through faith conquered kingdoms, enforced justice, obtained promises, stopped the mouths of lions, quenched the power of fire, escaped the edge of the sword, were made strong out of weakness, became mighty in war, put foreign armies to flight. Women received back their dead by resurrection. Some were tortured, refusing to accept release, so that they might rise again to a better life. Others suffered mocking and flogging, and even chains and imprisonment. They were stoned, they were sawn in two, they were killed with the sword. They went about in skins of sheep and goats, destitute, afflicted, mistreated— of whom the world was not worthy—wandering about in deserts and mountains, and in dens and caves of the earth.\n" +
+    "And all these, though commended through their faith, did not receive what was promised, since God had provided something better for us, that apart from us they should not be made perfect."];
+
+    function sophSpring(){
+        function getVerses(helper){
+            removeOldVerses();
+
+            for (i = 0; i < versesSS.length; i++) {
+                helper(memoryVersesSS[i], versesSS[i]);
+                if (i != versesSS.length - 1) {
+                    addHr();
+                }
+            }
+
+
+        }
+        getVerses(post);
+    }
+
+    function juFall(){
+        function getVerses(helper){
+            removeOldVerses();
+
+            for (i = 0; i < versesJF.length; i++) {
+                helper(memoryVersesJF[i], versesJF[i]);
+                if (i != versesJF.length - 1) {
+                    addHr();
+                }
+            }
+
+
+        }
+        getVerses(post);
+    }
+
+
+    // helper functions for the main functions called above.
+    function removeOldVerses(){
+        var node = document.getElementById("verses");
+        var children = node.children;
+        for (var i = 0; i < children.length; ) {
+            node.removeChild(children[i]);
+        }
+    }
+
+    function post(ref,ver) {
+
+        var para = document.createElement("strong");
+        var para2 = document.createElement("p");
+        var node = document.createTextNode(ref);
+        var node2 = document.createTextNode(ver);
+        para.appendChild(node);
+        para2.appendChild(node2);
+        document.getElementById("verses").appendChild(para);
+
+        document.getElementById("verses").appendChild(para2);
+    }
+
+    function addHr() {
+        var hr = document.createElement("hr");
+        document.getElementById('verses').appendChild(hr);
+    }
+
+    function advPost(ref,ver,ref2,ver2) {
+        var ul = document.createElement("ul");
+        ul.classList.add("actions");
+
+
+        var li1 = document.createElement("li");
+        var button = document.createElement("a");
+        var para2 = document.createElement("li");
+        var node = document.createTextNode(ref);
+        var node2 = document.createTextNode(ver);
+        button.appendChild(node);
+        button.classList.add("button");
+        button.classList.add("small");
+        button.classList.add("fit");
+        li1.appendChild(button);
+        para2.id = ref;
+        button.onclick = function(){
+            var x = document.getElementById(ref);
+            if (x.style.display === "none") {
+                x.style.display = "inline";
+            } else {
+                x.style.display = "none";
+            }
+        };
+        para2.appendChild(node2);
+        para2.style.display = "none";
+
+        ul.appendChild(li1);
+        ul.appendChild(para2);
+
+        var li2 = document.createElement("li");
+        var button2 = document.createElement("a");
+        var para3 = document.createElement("li");
+        var node2 = document.createTextNode(ref2);
+        var node22 = document.createTextNode(ver2);
+        button2.appendChild(node2);
+        button2.classList.add("button");
+        button2.classList.add("small");
+        button2.classList.add("fit");
+        li1.appendChild(button2);
+        para3.id = ref2;
+        button2.onclick = function(){
+            var x = document.getElementById(ref2);
+            if (x.style.display === "none") {
+                x.style.display = "inline";
+            } else {
+                x.style.display = "none";
+            }
+        };
+        para3.appendChild(node22);
+        para3.style.display = "none";
+
+        ul.appendChild(li2);
+        ul.appendChild(para3);
+
+        document.getElementById("verses").appendChild(ul);
+    }
+
+</script>
 
 
 </body>
