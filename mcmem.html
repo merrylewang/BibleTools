@@ -51,8 +51,8 @@
 							<h1>Merryle and Chibuzor Memorization</h1>
 							<!--<span class="image main"><img src="images/pic13.jpg" alt="" /></span>-->
 							<ul class="actions fit">
-								<li><a href="javascript:thisWeek()" class="button fit">This Week's verses</a></li>
-								<li><a href="javascript:upTilNow()" class="button fit">Verses up to now</a></li>
+								<li><a href="javascript:thisWeek()" class="button fit">Random Set of Verses</a></li>
+								<li><a href="javascript:upTilNow()" class="button fit">All Verses</a></li>
 								<li><a href="javascript:test()" class="button fit primary">Test yourself</a></li>
 
 
@@ -130,10 +130,10 @@
 chunks = ["Living the New Life", "Proclaiming Christ", "Reliance On God's Resources"
           , "Being Christ's Disciple", "Growth in Christlikeness"]
 
-					memoryVerses.reverse()
+					/*memoryVerses.reverse()
 					verses.reverse()
 					sections.reverse()
-					chunks.reverse()
+					chunks.reverse()*/
 
 					function upTilNow(){
 						function getVerses(helper){
@@ -152,7 +152,7 @@ chunks = ["Living the New Life", "Proclaiming Christ", "Reliance On God's Resour
 					function thisWeek(){
 						function getVerses(helper){
 							removeOldVerses();
-							var x = calculateWeek();
+							var x = Math.floor(Math.random() * 30) + 1;
 							addTitle(x-1);
 							for(i = (x - 1) * 2; i < x * 2; i++){
 								helper(memoryVerses[i],verses[i]);
@@ -187,7 +187,7 @@ chunks = ["Living the New Life", "Proclaiming Christ", "Reliance On God's Resour
 							var dat = new Date();
 							var start = new Date("2019-11-09 00:00:00.000000");
 							var diff = (dat-start) / 3600000 / 24 / 7;
-							return Math.ceil(diff);
+							return 30;
 				}
 
 				function addTitle(x) {
